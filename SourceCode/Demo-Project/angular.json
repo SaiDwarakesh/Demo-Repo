@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/time-champ.demo.aiAdoption",  
+            "outputPath": "dist/demo-projects",  
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
