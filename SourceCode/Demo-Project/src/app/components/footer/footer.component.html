@@ -4,7 +4,7 @@
     <div class="footer-section">
       <h3>{{ collegeInfo.name }}</h3>
       @for (item of collegeInfo.approvals; track $index) {
-        <p>{{ item }}</p>
+      <p>{{ item }}</p>
       }
     </div>
 
@@ -12,21 +12,18 @@
       <h4>Quick Links</h4>
       <ul>
         @for (link of quickLinks; track link.label) {
-          <li>
-            <a [routerLink]="link.route">{{ link.label }}</a>
-          </li>
+        <li class="flex items-center gap-2 group">
+          @if (link.icon) {
+          <img [src]="link.icon" [alt]="link.label"
+            class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+          }
+          <a [routerLink]="link.route" class="hover:text-danger transition-colors">{{ link.label }}</a>
+        </li>
         }
       </ul>
     </div>
 
-    <div class="footer-section">
-      <h4>Departments</h4>
-      <ul>
-        @for (dept of departments; track dept) {
-          <li>{{ dept }}</li>
-        }
-      </ul>
-    </div>
+
 
     <div class="footer-section">
       <h4>Contact</h4>
@@ -36,19 +33,13 @@
 
       <div class="social-icons">
         @for (social of socialLinks; track social.name) {
-          <a
-            [href]="social.url"
-            target="_blank"
-            [attr.aria-label]="social.name"
-            class="social-link">
+        <a [href]="social.url" target="_blank" [attr.aria-label]="social.name" class="social-link">
 
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true">
-              <path [attr.d]="social.svgPath"></path>
-            </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path [attr.d]="social.svgPath"></path>
+          </svg>
 
-          </a>
+        </a>
         }
       </div>
     </div>

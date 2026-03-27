@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 interface FooterLink {
   label: string;
   route: string;
+  icon?: string;
 }
 
 interface SocialLink {
@@ -23,24 +24,24 @@ interface SocialLink {
 export class FooterComponent {
 
   collegeInfo = {
-    name: 'Government Polytechnic College',
+    name: 'Balakrishna Engineering College',
     approvals: [
       'Government of Andhra Pradesh',
-      'Affiliated to SBTET, AP',
-      'Approved by AICTE, New Delhi'
+      'Affiliated to JNTUK',
+      'Accredited by NAAC'
     ],
-    location: 'Anantapur, Andhra Pradesh',
-    phone: '08554-123456',
-    email: 'govtpolytechnic@ap.gov.in'
+    location: 'Ongole, Andhra Pradesh',
+    phone: '+91 98482 46222',
+    email: 'info@balakrishnaengg.com'
   };
 
   quickLinks: FooterLink[] = [
-    { label: 'Home', route: '/' },
-    { label: 'About Institution', route: '/about' },
-    { label: 'Academics', route: '/academics' },
-    { label: 'Admissions', route: '/admissions' },
-    { label: 'Examinations', route: '/exams' },
-    { label: 'Mandatory Disclosure', route: '/disclosure' }
+    { label: 'Home', route: '/', icon: 'assets/icons/nav/home.png' },
+    { label: 'About Institution', route: '/about', icon: 'assets/icons/nav/about.png' },
+    { label: 'Colleges', route: '/colleges', icon: 'assets/icons/nav/colleges.png' },
+    { label: 'Academics', route: '/academics', icon: 'assets/icons/nav/academics.png' },
+    { label: 'Admissions', route: '/admissions', icon: 'assets/icons/nav/admissions.png' },
+    { label: 'Placements', route: '/placements', icon: 'assets/icons/nav/placements.png' }
   ];
 
   departments: string[] = [

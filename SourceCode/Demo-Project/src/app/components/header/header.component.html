@@ -1,10 +1,12 @@
 <header class="w-full bg-dark relative z-50">
-  <!-- Top Bar (Desktop Only) -->
+  <!-- Top Bar -->
   <div class="container mx-auto px-4 lg:px-6">
-    <div class="flex items-center justify-between text-white text-[13px] py-1.5 border-b border-white/10 hidden lg:flex">
+    <div
+      class="flex items-center justify-between text-white text-[13px] py-1.5 border-b border-white/10 hidden lg:flex">
       <!-- Contact Info -->
       <div class="flex items-center gap-6">
-        <a href="mailto:info&#64;balakrishnaengg.com" class="flex items-center gap-2 hover:text-danger transition-colors">
+        <a href="mailto:info&#64;balakrishnaengg.com"
+          class="flex items-center gap-2 hover:text-danger transition-colors">
           <i class="fa fa-envelope-o"></i>
           <span>info&#64;balakrishnaengg.com</span>
         </a>
@@ -15,11 +17,8 @@
       </div>
       <!-- Top Nav Links -->
       <div class="flex items-center gap-5 font-medium opacity-90">
-        <a href="#" class="hover:text-danger transition-colors">Student Life</a>
-        <a href="#" class="hover:text-danger transition-colors">Safety & Security</a>
-        <a href="#" class="hover:text-danger transition-colors">For Parents</a>
-        <a href="#" class="hover:text-danger transition-colors">Alumni</a>
-        <a href="#" class="hover:text-danger transition-colors">Contact Us</a>
+        <a routerLink="/admissions" class="hover:text-danger transition-colors cursor-pointer">Apply Now</a>
+        <a routerLink="/contact" class="hover:text-danger transition-colors cursor-pointer">Contact Us</a>
       </div>
     </div>
   </div>
@@ -27,61 +26,55 @@
   <!-- Main Navigation Bar -->
   <div class="container mx-auto px-4 lg:-mb-10 lg:mt-3 relative">
     <nav class="bg-white rounded-xl lg:rounded-2xl shadow-xl flex items-center justify-between py-2 px-4 lg:px-6">
-      
-      <!-- Mobile Menu Button (Left on Mobile) -->
+
+      <!-- Mobile Menu Button -->
       <button (click)="toggleMenu()" class="lg:hidden text-dark p-2 focus:outline-none order-1">
         <i class="fa" [ngClass]="isMenuOpen ? 'fa-times text-xl' : 'fa-bars text-xl'"></i>
       </button>
 
-      <!-- Logo & Name (Middle/Left on Mobile) -->
-      <div class="flex items-center gap-2 lg:gap-4 order-2 lg:order-1 flex-1 lg:flex-none justify-center lg:justify-start">
-        <div class="w-12 h-12 lg:w-20 lg:h-20 flex items-center justify-center p-0.5 lg:p-1 bg-white border border-gray-100 rounded-full">
+      <!-- Logo & Name -->
+      <div
+        class="flex items-center gap-2 lg:gap-4 order-2 lg:order-1 flex-1 lg:flex-none justify-center lg:justify-start">
+        <div
+          class="w-12 h-12 lg:w-20 lg:h-20 flex items-center justify-center p-0.5 lg:p-1 bg-white border border-gray-100 rounded-full cursor-pointer"
+          routerLink="/">
           <img src="assets/college-logo.png" alt="Balakrishna Logo" class="w-full h-full object-contain">
         </div>
-        <div class="flex flex-col">
-          <h1 class="text-danger font-extrabold text-sm sm:text-lg lg:text-2xl tracking-tight leading-none lg:leading-tight uppercase font-[Inter]">
+        <div class="flex flex-col cursor-pointer" routerLink="/">
+          <h1
+            class="text-danger font-extrabold text-sm sm:text-lg lg:text-2xl tracking-tight leading-none lg:leading-tight uppercase font-[Inter]">
             Balakrishna
           </h1>
-          <h2 class="text-dark font-bold text-xs sm:text-base lg:text-xl tracking-wide leading-none lg:leading-tight uppercase font-[Inter]">
+          <h2
+            class="text-dark font-bold text-xs sm:text-base lg:text-xl tracking-wide leading-none lg:leading-tight uppercase font-[Inter]">
             Engineering College
           </h2>
-          <span class="text-[8px] lg:text-[10px] text-gray-500 font-medium tracking-wider hidden sm:block">AFFILIATED TO JNTUK | ACCREDITED BY NAAC</span>
+          <span class="text-[8px] lg:text-[10px] text-gray-500 font-medium tracking-wider hidden sm:block">AFFILIATED TO
+            JNTUK | ACCREDITED BY NAAC</span>
         </div>
       </div>
 
-      <!-- Navigation Links (Desktop Only) -->
+      <!-- Navigation Links -->
       <div class="hidden 2lg:flex items-center gap-7 order-2">
-        <a href="#" class="text-dark font-bold text-[15px] hover:text-danger transition-colors">Home</a>
-        <div class="relative group cursor-pointer">
-          <div class="flex items-center gap-1.5 text-dark font-bold text-[15px] group-hover:text-danger transition-colors">
-            About <i class="fa fa-angle-down text-sm"></i>
-          </div>
-        </div>
-        <div class="relative group cursor-pointer">
-          <div class="flex items-center gap-1.5 text-dark font-bold text-[15px] group-hover:text-danger transition-colors">
-            Colleges <i class="fa fa-angle-down text-sm"></i>
-          </div>
-        </div>
-        <div class="relative group cursor-pointer">
-          <div class="flex items-center gap-1.5 text-dark font-bold text-[15px] group-hover:text-danger transition-colors">
-            Academics <i class="fa fa-angle-down text-sm"></i>
-          </div>
-        </div>
-        <div class="relative group cursor-pointer">
-          <div class="flex items-center gap-1.5 text-dark font-bold text-[15px] group-hover:text-danger transition-colors">
-            Admissions <i class="fa fa-angle-down text-sm"></i>
-          </div>
-        </div>
-        <div class="relative group cursor-pointer">
-          <div class="flex items-center gap-1.5 text-dark font-bold text-[15px] group-hover:text-danger transition-colors">
-            Placements <i class="fa fa-angle-down text-sm"></i>
-          </div>
-        </div>
+        <a routerLink="/" routerLinkActive="text-orange border-b-2 border-orange"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">Home</a>
+        <a routerLink="/about" routerLinkActive="text-orange border-b-2 border-orange"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">About</a>
+        <a routerLink="/colleges" routerLinkActive="text-orange border-b-2 border-orange"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">Colleges</a>
+        <a routerLink="/academics" routerLinkActive="text-orange border-b-2 border-orange"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">Academics</a>
+        <a routerLink="/admissions" routerLinkActive="text-orange border-b-2 border-orange"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">Admissions</a>
+        <a routerLink="/placements" routerLinkActive="text-orange border-b-2 border-orange"
+          class="text-dark font-bold text-[15px] hover:text-orange transition-all py-1">Placements</a>
       </div>
 
-      <!-- Apply Now CTA (Compact on Mobile) -->
+      <!-- Apply Now CTA -->
       <div class="flex items-center order-3">
-        <button class="bg-danger hover:bg-danger-active text-white px-3 lg:px-7 py-2 lg:py-3.5 rounded-lg lg:rounded-xl font-bold text-xs lg:text-[15px] shadow-lg shadow-danger-clarity flex items-center gap-1 lg:gap-2 group transition-all">
+        <button routerLink="/admissions"
+          class="bg-danger hover:bg-danger-active text-white px-3 lg:px-7 py-2 lg:py-3.5 rounded-lg lg:rounded-xl font-bold text-xs lg:text-[15px] shadow-lg shadow-danger-clarity flex items-center gap-1 lg:gap-2 group transition-all">
           <i class="fa fa-pencil group-hover:rotate-12 transition-transform"></i>
           <span class="hidden sm:inline">APPLY NOW</span>
           <span class="sm:hidden text-[10px]">APPLY</span>
@@ -90,41 +83,23 @@
     </nav>
 
     <!-- Mobile Navigation Drawer -->
-    <div 
+    <div
       class="lg:hidden absolute left-0 right-0 top-full mt-2 mx-4 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-40 border border-gray-100"
-      [class.max-h-0]="!isMenuOpen"
-      [class.max-h-[500px]]="isMenuOpen"
-      [class.opacity-0]="!isMenuOpen"
-      [class.py-4]="isMenuOpen"
-    >
-      <div class="flex flex-col px-6 divide-y divide-gray-100">
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors">Home</a>
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors flex justify-between items-center">
-          About <i class="fa fa-angle-right text-gray-400"></i>
-        </a>
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors flex justify-between items-center">
-          Colleges <i class="fa fa-angle-right text-gray-400"></i>
-        </a>
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors flex justify-between items-center">
-          Academics <i class="fa fa-angle-right text-gray-400"></i>
-        </a>
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors flex justify-between items-center">
-          Admissions <i class="fa fa-angle-right text-gray-400"></i>
-        </a>
-        <a href="#" class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors flex justify-between items-center">
-          Placements <i class="fa fa-angle-right text-gray-400"></i>
-        </a>
-        <!-- Top Nav Links for Mobile -->
-        <div class="pt-4 pb-2 border-t mt-2">
-          <h3 class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-3">Resources</h3>
-          <div class="grid grid-cols-2 gap-y-3 gap-x-4">
-            <a href="#" class="text-[13px] text-gray-600 font-medium">Student Life</a>
-            <a href="#" class="text-[13px] text-gray-600 font-medium">Safety</a>
-            <a href="#" class="text-[13px] text-gray-600 font-medium">Parents</a>
-            <a href="#" class="text-[13px] text-gray-600 font-medium">Alumni</a>
-            <a href="#" class="text-[13px] text-gray-600 font-medium">Contact</a>
-          </div>
-        </div>
+      [class.max-h-0]="!isMenuOpen" [class.max-h-[500px]]="isMenuOpen" [class.opacity-0]="!isMenuOpen">
+      <div class="flex flex-col px-6 divide-y divide-gray-100 py-4">
+        <a routerLink="/" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="py-3 text-dark font-bold text-[15px] hover:text-orange transition-colors">Home</a>
+        <a routerLink="/about" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          class="py-3 text-dark font-bold text-[15px] hover:text-orange transition-colors">About</a>
+        <a routerLink="/colleges" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          class="py-3 text-dark font-bold text-[15px] hover:text-orange transition-colors">Colleges</a>
+        <a routerLink="/academics" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          class="py-3 text-dark font-bold text-[15px] hover:text-orange transition-colors">Academics</a>
+        <a routerLink="/admissions" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors">Admissions</a>
+        <a routerLink="/placements" (click)="isMenuOpen = false" routerLinkActive="text-orange"
+          class="py-3 text-dark font-bold text-[15px] hover:text-danger transition-colors">Placements</a>
       </div>
     </div>
   </div>
